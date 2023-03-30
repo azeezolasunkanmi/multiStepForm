@@ -30,8 +30,8 @@ Users should be able to:
 ![Screenshot 2023-03-30 154511](https://user-images.githubusercontent.com/62578176/228874476-27736d16-8aa0-4b38-acd2-02f4bda54e1e.png)
 
 ### Links
-- [Solution URL](https://multistepform-3tvh.onrender.com)
-- [Live Site URL](https://github.com/azeezolasunkanmi/multiStepForm.git)
+- [Solution URL](https://github.com/azeezolasunkanmi/multiStepForm.git)
+- [Live Site URL](https://multistepform-3tvh.onrender.com/)
 
 ## My process
 
