@@ -1,0 +1,553 @@
+/* "use strict"; */
+
+/* fonts */
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+:root {
+  /* Primary */
+
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  /* ### Neutral */
+
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Ubuntu, sans-serif;
+  background-color: var(--Magnolia);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+.main {
+  height: 37.5rem;
+  width: 58.75rem;
+  background-color: var(--White);
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+}
+
+.side-bar {
+  width: 30%;
+  height: 100%;
+  padding: 40px 32px;
+  background-image: url(./img/bg-sidebar-desktop.svg);
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.form-container {
+  width: 70%;
+  height: 100%;
+  padding: 0 5.5rem;
+  margin: 2rem auto 0;
+  position: relative;
+}
+
+.side-bar li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.side-bar li span {
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-weight: 700;
+  color: var(--White);
+  border: 1px solid var(--White);
+}
+
+.side-bar li span.active {
+  color: var(--Marine-blue);
+  background-color: var(--Light-blue);
+  border: 0;
+}
+
+.side-bar li p:first-child {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--Pastel-blue);
+  margin-bottom: 0.25rem;
+}
+
+.side-bar li p:last-child {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--White);
+}
+
+form {
+  position: relative;
+  height: 100%;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--Marine-blue);
+  margin-bottom: 11px;
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--Cool-gray);
+  margin-bottom: 2.5rem;
+  line-height: 1.5rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--Marine-blue);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+label span {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--Strawberry-red);
+}
+
+input {
+  width: 100%;
+  height: 3rem;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--Marine-blue);
+  border: 1px solid var(--Light-gray);
+  font-family: inherit;
+  margin-bottom: 1.5rem;
+}
+
+input.error {
+  border: 2px solid var(--Strawberry-red);
+}
+
+.nav {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.1s ease-in;
+  border: none;
+}
+
+.btn-prev {
+  color: var(--Cool-gray);
+  background-color: transparent;
+  /* visibility: hidden; */
+  transition: all 0.1s ease-in;
+}
+
+.btn-next {
+  padding: 0.94rem 1.5rem;
+  color: var(--White);
+  background-color: var(--Marine-blue);
+  margin-left: auto;
+  transition: all 0.1s ease-in;
+}
+
+.btn-next:hover {
+  opacity: 0.8;
+}
+
+.btn-prev:hover {
+  color: var(--Marine-blue);
+}
+
+.plan-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+}
+
+.plan {
+  width: 8.6rem;
+  padding: 1.25rem 1rem 1rem 1rem;
+  border: 1px solid var(--Light-gray);
+  border-radius: 8px;
+  background-color: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.plan img {
+  margin-bottom: 2.5rem;
+}
+
+.plan-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--Marine-blue);
+  margin-bottom: 0.4rem;
+}
+
+.plan-price,
+.plan-price-yr {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--Cool-gray);
+}
+
+.plan.selected {
+  border-color: var(--Purplish-blue);
+  background-color: var(--Alabaster);
+}
+
+.plan-type-switch {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 2rem;
+  background-color: var(--Alabaster);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.free-plan {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--color-marine-blue);
+}
+
+.switch {
+  height: 1.25rem;
+  width: 2.7rem;
+  padding: 0.2rem;
+  border-radius: 10px;
+  background-color: var(--Marine-blue);
+  border: none;
+  cursor: pointer;
+  margin: 0 1rem;
+  color: var(--White);
+}
+
+.switch-btn {
+  background-color: var(--White);
+  width: 35%;
+  border-radius: 50%;
+  height: 0.8rem;
+  display: block;
+  transition: all 0.2s linear;
+}
+
+.yearly {
+  margin-left: 60%;
+}
+
+.addons {
+  margin-top: 2.5rem;
+}
+
+.addon {
+  width: 100%;
+  height: 5rem;
+  border: 1px solid var(--Light-gray);
+  border-radius: 8px;
+  background-color: transparent;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem 1.25rem;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addon:hover {
+  border: 1px solid var(--Purplish-blue);
+}
+
+.addon.checked {
+  background-color: var(--Alabaster);
+  border: 1px solid var(--Purplish-blue);
+}
+
+.addon div {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.checkmark {
+  height: 1.25rem;
+  width: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--Light-gray);
+  border-radius: 4px;
+}
+.checkmark.checked {
+  background-color: var(--Purplish-blue);
+  border: none;
+}
+
+.checkmark-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--Marine-blue);
+  margin-bottom: 7px;
+}
+.checkmark-description {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--Cool-gray);
+}
+
+.addon-price {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--Purplish-blue);
+}
+
+.cart {
+  width: 100%;
+  padding: 1rem 1.5rem 1.5rem;
+  background-color: var(--Alabaster);
+  border-radius: 8px;
+  margin-top: 2.5rem;
+}
+
+.cart div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+}
+
+.cart div:nth-child(2) {
+  border-top: 1px solid var(--Light-gray);
+  padding-top: 1rem;
+  padding-bottom: 0;
+}
+
+.cart div:first-child p {
+  font-size: 1rem;
+  color: var(--Marine-blue);
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.cart button {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--Cool-gray);
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.cart button:hover {
+  color: var(--Purplish-blue);
+}
+
+.cart div:first-child .amount {
+  font-weight: 700;
+}
+
+.cart:nth-child(2) p {
+  font-size: 1rem;
+  color: var(--Cool-gray);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.cart:nth-child(2) p.amount2 {
+  color: var(--Marine-blue);
+  font-size: 0.9rem;
+}
+
+.total {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.total p {
+  font-size: 1rem;
+  color: var(--Cool-gray);
+  font-weight: 500;
+}
+
+p.total-amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--Purplish-blue);
+}
+
+.thanks-message {
+  max-width: 28rem;
+  margin: 125px auto auto;
+  text-align: center;
+}
+
+.thanks-message img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.thanks-message h3 {
+  color: var(--Marine-blue);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.thanks-message p {
+  color: var(--Cool-gray);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 25px;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////////// */
+.hidden {
+  display: none;
+}
+
+.invincible {
+  visibility: hidden;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media (max-width: 669px) {
+  body {
+    display: block;
+    height: 100%;
+  }
+
+  div.main {
+    margin: 0 auto;
+    margin-top: 6.2rem;
+    width: 92vw;
+    height: fit-content;
+    margin-bottom: 5.8rem;
+    padding: 2rem 1.5rem;
+  }
+
+  aside.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10.8rem;
+    border-radius: 0;
+    background-image: url(/img/bg-sidebar-mobile.svg);
+    z-index: -1;
+  }
+
+  .side-bar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .side-bar li div {
+    display: none;
+  }
+
+  .form-container {
+    margin-top: 0;
+    padding: 0;
+    width: 85%;
+  }
+
+  .nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--White);
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: 1rem;
+  }
+
+  .plan-btn-container {
+    display: block;
+  }
+
+  .plan {
+    display: flex;
+    width: 100%;
+    padding: 1rem 0 0.9rem 1rem;
+    gap: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .plan img {
+    margin: 0;
+  }
+
+  .plan-type-switch {
+    margin-top: 0.9rem;
+  }
+  .addon {
+    padding: 0.8rem 1rem;
+  }
+
+  .addon div {
+    gap: 1rem;
+  }
+  .thanks-message {
+    margin: 3rem 0;
+  }
+}
