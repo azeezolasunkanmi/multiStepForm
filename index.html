@@ -14,32 +14,32 @@
     <title>MultiStepForm</title>
   </head>
   <body>
-    <div class="main">
+    <div role="main" class="main">
       <aside class="side-bar">
         <ul>
           <li>
-            <span id="first" class="step active">1</span>
+            <span data-id="first" class="step active">1</span>
             <div>
               <p>STEP 1</p>
               <p>YOUR INFO</p>
             </div>
           </li>
           <li>
-            <span id="second" class="step">2</span>
+            <span data-id="second" class="step">2</span>
             <div>
               <p>STEP 2</p>
               <p>SELECT PLAN</p>
             </div>
           </li>
           <li>
-            <span id="third" class="step">3</span>
+            <span data-id="third" class="step">3</span>
             <div>
               <p>STEP 3</p>
               <p>ADD-ONS</p>
             </div>
           </li>
           <li>
-            <span id="fourth" class="step">4</span>
+            <span data-id="fourth" class="step">4</span>
             <div>
               <p>STEP 4</p>
               <p>SUMMARY</p>
@@ -48,7 +48,7 @@
         </ul>
       </aside>
       <section class="form-container">
-        <form class="container" action="">
+        <form class="container" action="#">
           <div id="first" class="slide active">
             <div>
               <h2 class="title">Personal Info</h2>
@@ -61,6 +61,7 @@
                 >Name <span id="name" aria-live="polite"></span
               ></label>
               <input
+                id="name"
                 aria-describedby="name"
                 type="text"
                 placeholder="e.g. Stephen King"
@@ -71,6 +72,7 @@
                 >Email Address <span id="email" aria-live="polite"></span
               ></label>
               <input
+                id="email"
                 aria-describedby="email"
                 type="email"
                 placeholder="e.g. Stephenking@lorem.com"
@@ -81,6 +83,7 @@
                 >Phone Number <span id="number" aria-live="polite"></span
               ></label>
               <input
+                id="phone"
                 aria-describedby="number"
                 type="tel"
                 placeholder="e.g. +1 234 567 890"
@@ -141,10 +144,10 @@
               </p>
             </div>
             <div class="addons">
-              <button id="onlineService" type="button" class="addon">
+              <button type="button" class="addon">
                 <div>
-                  <span id="onlineService" class="checkmark">
-                    <img src="./img/icon-checkmark.svg" />
+                  <span class="checkmark">
+                    <img src="./img/icon-checkmark.svg" alt="checkmark" />
                   </span>
                   <span>
                     <p class="checkmark-name">Online service</p>
@@ -156,10 +159,10 @@
                 <p class="addon-month addon-price">+$1/mo</p>
                 <p class="addon-year addon-price hidden">+$10/yr</p>
               </button>
-              <button id="largerStorage" type="button" class="addon">
+              <button type="button" class="addon">
                 <div>
-                  <span id="largerStorage" class="checkmark">
-                    <img src="./img/icon-checkmark.svg" />
+                  <span class="checkmark">
+                    <img src="./img/icon-checkmark.svg" alt="checkmark" />
                   </span>
                   <span>
                     <p class="checkmark-name">Larger storage</p>
@@ -169,10 +172,10 @@
                 <p class="addon-month addon-price">+$2/mo</p>
                 <p class="addon-year addon-price hidden">+$20/yr</p>
               </button>
-              <button id="customProfile" type="button" class="addon">
+              <button type="button" class="addon">
                 <div>
-                  <span id="customProfile" class="checkmark">
-                    <img src="./img/icon-checkmark.svg" />
+                  <span class="checkmark">
+                    <img src="./img/icon-checkmark.svg" alt="checkmark" />
                   </span>
                   <span>
                     <p class="checkmark-name">Customizable profile</p>

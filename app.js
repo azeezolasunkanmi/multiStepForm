@@ -101,7 +101,7 @@ class App {
       side.classList.remove("active");
     });
     Array.from(sidenumbers).find(side => {
-      if (side.id === this._currentPage().id) {
+      if (side.dataset.id === this._currentPage().id) {
         side.classList.add("active");
       }
     });
